@@ -1,0 +1,151 @@
+<div id="wrapper">
+  <div class="allcont">
+    <app-header></app-header>
+
+    <div class="basicrow mbott">
+      <div class="container">
+        <div class="fulltitle m-top-i f-btitle">
+          <img width="100%" class="userimgicon" src="../../assets/images/usersvicon.png"> Usuarios y Permisos
+        </div>
+
+        <div class="basicrow m-top-i mbott-i text-center">
+          <div class="stepsvone">
+            <div class="stepautoc on first">
+              Creaci&oacute;n de Usuario
+
+              <div class="stepcirc text-center">
+                <div class="circ-in"></div>
+              </div>
+            </div>
+
+            <div class="stepautoc middle">
+              Asignaci&oacute;n de Permisos
+              <div class="stepcirc">
+                <div class="circ-in"></div>
+              </div>
+            </div>
+
+            <div class="stepautoc last">
+              Resumen y Confirmaci&oacute;n
+              <div class="stepcirc">
+                <div class="circ-in"></div>
+              </div>
+            </div>
+
+            <div class="stepsline"></div>
+          </div>
+        </div>
+
+        <div class="basicrow m-top">
+          <div class="autowcont m-bott">
+            <div class="basicrow msidespad">
+              <div class="b-title">
+                <div class="autocont f-black roboto-m f-bmed pull-left vcenter">
+                  <div class="tabcell">
+                    Crear Nuevo Usuario
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="basicrow m-top-u msidespad">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="basicrow m-bott">
+                    <label class="label-f">&#42; Nombre</label>
+
+                    <div class="basicrow rel">
+                      <img data-toggle="popover" data-html="true" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." data-placement="bottom" class="q-t" width="100%" src="../../assets/images/tooltip1.png">
+
+                      <input class="inp-f qt">
+                    </div>
+                  </div>
+
+                  <div class="basicrow m-bott">
+                    <label class="label-f">&#42; Apellido</label>
+
+                    <div class="basicrow rel">
+                      <img data-toggle="popover" data-html="true" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." data-placement="bottom" class="q-t" width="100%" src="../../assets/images/tooltip1.png">
+
+                      <input class="inp-f qt">
+                    </div>
+                  </div>
+
+                  <div class="basicrow m-bott">
+                    <label class="label-f">&#42; Usuario</label>
+
+                    <div class="basicrow rel">
+                      <img data-toggle="popover" data-html="true" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." data-placement="bottom" class="q-t" width="100%" src="../../assets/images/tooltip1.png">
+
+                      <input class="inp-f qt">
+                    </div>
+                  </div>
+
+                  <div class="basicrow m-bott">
+                    <label class="label-f">&#42; N&uacute;mero de tel&eacute;fono</label>
+
+                    <div class="basicrow rel">
+                      <img data-toggle="popover" data-html="true" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." data-placement="bottom" class="q-t" width="100%" src="../../assets/images/tooltip1.png">
+
+                      <input class="inp-f qt">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="basicrow text-justify">
+                    <span class="roboto-b">Opcional:</span> Si desea darle privilegios de administrador a este usuario.
+                  </div>
+
+                  <div class="optchoice on roboto-r text-left">
+                    <div class="checkdef">
+                      <input type="radio" name="radioG1" id="radioG1" class="css-radio" checked/><label for="radioG1" class="css-label3 radGroup1"></label>
+                    </div>
+
+                    <div class="basicrow f-med roboto-b">Administrador</div>
+
+                    <div class="basicrow m-top-u-i">
+                      Usuario tendr&aacute; privilegios para crear usuarios, editar roles y permisos, pagar facturas, agregar servicios, comprar paquetes de data y data roaming.
+                    </div>
+                  </div>
+
+                  <div class="optchoice roboto-r text-left m-bott-i">
+                    <div class="checkdef">
+                      <input type="radio" name="radioG1" id="radioG1" class="css-radio"/><label for="radioG1" class="css-label3 radGroup1"></label>
+                    </div>
+
+                    <div class="basicrow f-med roboto-b">Manager</div>
+
+                    <div class="basicrow m-top-u-i">
+                      Usuario podr&aacute; pagar facturas. Agregar servicios, comprar paquetes de data y data roaming ser&aacute;n opcionales dependiendo de los permisos otorgados.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="basicrow m-bott msidespad">
+              <div class="basicrow topbord">
+                <div class="basicrow m-top-u-i">
+                  <a (click)="goTo('asignarpermisos')" class="btns def-i red pull-right vcenter">
+												<span class="tabcell">
+													Crear Usuario&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+												</span>
+                  </a>
+
+                  <a (click)="goTo('usuariosypermisos')" class="btns def-i gray pull-left vcenter">
+												<span class="tabcell">
+													Cancelar
+												</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

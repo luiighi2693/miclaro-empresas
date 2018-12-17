@@ -1,0 +1,246 @@
+<div id="mySidenav" class="sidenav">
+  <a (click)="goTo('home')" class="m-menubar vcenter">
+				<span class="tabcell">
+					Resumen
+
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+				</span>
+  </a>
+
+  <a class="m-menubar vcenter">
+				<span class="tabcell" (click)="goTo('manejodecuenta')">
+					Manejo de Cuenta
+
+					<i data-toggle="collapse" data-target="#accountmanagement" class="fa" [ngClass]="!collapseAccounManagementFlag ? 'fa-plus' : 'fa-minus'" (click)="collapseAccounManagementFlag = !collapseAccounManagementFlag"></i>
+
+				</span>
+  </a>
+
+  <div id="accountmanagement" class="collapse">
+    <a (click)="goTo('usuariosypermisos')" class="m-menuin vcenter">
+					<span class="tabcell">
+						Usuarios y Permisos <i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+    </a>
+  </div>
+
+  <a class="m-menubar vcenter">
+				<span class="tabcell">
+					Pagos y Facturas
+
+					<i data-toggle="collapse" data-target="#pagosyfacts" class="fa" [ngClass]="!collapsePaymentsAndInvoices ? 'fa-plus' : 'fa-minus'" (click)="collapsePaymentsAndInvoices = !collapsePaymentsAndInvoices"></i>
+				</span>
+  </a>
+
+  <div id="pagosyfacts" class="collapse">
+    <a (click)="goTo('historial-de-pagos')" class="m-menuin vcenter">
+					<span class="tabcell">
+						Histórico de Pagos <i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+    </a>
+
+    <a class="m-menuin vcenter">
+					<span class="tabcell">
+						Descarga Tu Factura <i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+    </a>
+  </div>
+
+  <a class="m-menubar vcenter">
+				<span class="tabcell">
+					Soporte
+
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+				</span>
+  </a>
+</div>
+<!-- [END MENU MOVIL] -->
+
+<!--<a class="chatelement hidden-xs hidden-sm">-->
+			<!--<span class="chate-icon text-center">-->
+				<!--<img width="100%" src="images/atenicon.png">-->
+			<!--</span>-->
+
+  <!--<span class="chate-t text-center">-->
+				<!--Chat<br/>-->
+				<!--Asistente<br/>-->
+				<!--Virtual-->
+			<!--</span>-->
+<!--</a>-->
+
+
+<div class="basicrow">
+  <div class="htopbar">
+    <div class="container vcenter">
+      <div class="tabcell">
+        <div class="autorow pull-left">
+          <div class="autorow pull-left d-twlv arrw">
+            <select>
+              <option>
+                Empresas
+              </option>
+            </select>
+          </div>
+
+          <div class="autorow w-bar pull-left h-twlv">
+            <a>Personas</a>
+            <a class="on m-sides">Empresas</a>
+          </div>
+
+          <div class="autorow ml-htop pull-left h-twlv">
+            <div class="autorow g-bar pull-left">
+              <i class="fa fa-phone" aria-hidden="true"></i> Contactar Ventas: <a href="tel:+18001230000">1-800-123-0000</a>
+            </div>
+
+            <div class="autorow pull-left">
+              Contactar Soporte: <a href="tel:+18001231230001">1-800-123-123-0001</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="autorow ml-htop pull-left h-twlv" *ngIf="validateSession()">
+          <a><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;{{authenticationService.getCredentials().username}}</a>
+        </div>
+
+        <div class="autorow ml-htop pull-left h-twlv" *ngIf="validateSession()">
+          <a (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;Cerrar Sesi&oacute;n</a>
+        </div>
+
+        <div class="autorow pull-right">
+          <div class="autorow pull-left h-twlv-ii">
+            <img class="bandera" width="100%" src="../../assets/images/bandera.png">
+          </div>
+
+          <div class="autorow pull-left d-twlv-ii">
+            <a><img width="100%" class="atenicon" src="../../assets/images/atenicon.png"> Chat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!validateSession()" class="menubar">
+    <div class="container">
+      <div class="autorow pull-left">
+        <a class="mc-logo">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											<img width="100%" src="../../assets/images/miclaro-logo.png">
+										</span>
+									</span>
+        </a>
+      </div>
+
+      <div class="autorow pull-right">
+        <a class="autocont fift pull-right">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											<i class="fa fa-question-circle" aria-hidden="true"></i> Ayuda
+										</span>
+									</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="validateSession()" class="menubar">
+    <div class="container rel">
+      <div class="autorow pull-left">
+        <a class="mc-logo">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											<img width="100%" src="../../assets/images/miclaro-logo.png">
+										</span>
+									</span>
+        </a>
+      </div>
+
+      <div class="autorow pull-left hidden-xs hidden-sm">
+        <a (click)="goTo('home')" class="menu-ls mexpand" [ngClass]="path === '/home' ? 'on' : ''">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											Resumen
+										</span>
+									</span>
+        </a>
+
+        <a data-toggle="collapse" data-target="#manejodecuenta" class="menu-ls mexpand" [ngClass]="path === '/manejodecuenta' || path === '/usuariosypermisos' || path === '/crearusuario' || path === '/asignarpermisos' || path === '/resumenyconfirmacion' ? 'on' : ''">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											Manejo de Cuenta
+										</span>
+									</span>
+        </a>
+
+        <a data-toggle="collapse" data-target="#pagosyfacturas" class="menu-ls mexpand" [ngClass]="path === '/historial-de-pagos' ? 'on' : ''">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											Pagos y Facturas
+										</span>
+									</span>
+        </a>
+
+        <a class="menu-ls mexpand">
+									<span class="autocont vcenter">
+										<span class="tabcell">
+											Soporte
+										</span>
+									</span>
+        </a>
+      </div>
+
+      <div class="autorow pull-right visible-xs visible-sm">
+        <div class="mnu-icon" (click)="isOpenFlag = !isOpenFlag" [ngClass]="{'m-open': isOpenFlag}">
+          <div class="autocont vcenter">
+            <div class="tabcell">
+              <i onclick="openNav()" class="fa fa-bars" aria-hidden="true"></i>
+
+              <i onclick="closeNav()" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="manejodecuenta" class="collapse claro-sublinks">
+      <div class="subconts">
+        <div class="basicrow roboto-m f-black f-bmed">
+          <a (click)="goTo('manejodecuenta')">Manejo de Cuenta</a>
+        </div>
+
+        <div class="basicrow roboto-r f-black f-med">
+          <img class="submenu-icon" width="100%" src="../../assets/images/ico_manejoRecursos.svg">
+
+          <a (click)="goTo('usuariosypermisos')" class="autorow m-top-ii pull-left m-right-i">Usuarios y Permisos</a>
+        </div>
+      </div>
+
+      <div class="bluemenumsg roboto-r vcenter">
+        <div class="tabcell">
+          La red donde todo es posible
+        </div>
+      </div>
+    </div>
+
+    <div id="pagosyfacturas" class="collapse claro-sublinks">
+      <div class="subconts">
+        <div class="basicrow roboto-m f-black f-bmed">
+          <a>Pagos y Facturas</a>
+        </div>
+
+        <div class="basicrow roboto-r f-black f-med">
+          <img class="submenu-icon" width="100%" src="../../assets/images/ico_resumen_de_factura-empresa-01.svg">
+
+          <a (click)="goTo('historial-de-pagos')" class="autorow m-top-ii pull-left m-right-i">Histórico de Pagos</a>
+          <a class="autorow m-top-ii pull-left m-right-i">Descarga Tu Factura</a>
+        </div>
+      </div>
+
+      <div class="bluemenumsg roboto-r vcenter">
+        <div class="tabcell">
+          La red donde todo es posible
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
